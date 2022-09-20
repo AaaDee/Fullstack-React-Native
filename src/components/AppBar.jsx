@@ -46,12 +46,22 @@ const AppBar = () => {
           <Text style={styles.text}>Repositories</Text>
         </Link>
         {userQuery.data?.me ?
-          <Pressable onPress={signOut} style={styles.link}>
-            <Text style={styles.text}>Sign Out</Text>
-          </Pressable> :
-          <Link to='/signin' style={styles.link}>
-          <Text style={styles.text}>Sign In</Text>
-        </Link> 
+          <>
+            <Link to='/review' style={styles.link}>
+              <Text style={styles.text}>Create Review</Text>
+            </Link>
+            <Pressable onPress={signOut} style={styles.link}>
+              <Text style={styles.text}>Sign Out</Text>
+            </Pressable>
+          </> :
+          <>
+            <Link to='/signin' style={styles.link}>
+              <Text style={styles.text}>Sign In</Text>
+            </Link>
+            <Link to='/signup' style={styles.link}>
+              <Text style={styles.text}>Sign Up</Text>
+            </Link> 
+          </>
         }
       </ScrollView>
     </View>
